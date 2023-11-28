@@ -15,4 +15,5 @@ public class ResourceEntity {
     String name;
     String data_address;
     Boolean isDeleted;
+    Integer size;
 }

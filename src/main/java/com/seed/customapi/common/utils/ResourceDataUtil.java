@@ -7,34 +7,34 @@ import java.util.List;
 public class ResourceDataUtil<T> {
 
     // returning final result which length is equal to size
-    public static List<LinkedHashMap<String, Object>> generateData(int size, LinkedHashMap<String, String> data) {
+    public static List<LinkedHashMap<String, Object>> generateData(int size, LinkedHashMap<String, String> dataStructure) {
         ArrayList<LinkedHashMap<String, Object>> result = new ArrayList<>();
         int id = 1;
         while (id < size) {
             LinkedHashMap<String, Object> metadata = new LinkedHashMap<>();
             metadata.put("id", id);
 
-            for (var entry : data.entrySet()) {
+            for (var entry : dataStructure.entrySet()) {
                 var key = entry.getKey();
                 var type = entry.getValue();
                 switch (type) {
                     case "String" -> {
-                        metadata.put(key, DataGenerator.generateString(key, id));
+                        metadata.put(key, MetadataGenerator.generateString(key, id));
                     }
                     case "Date" -> {
-                        metadata.put(key, DataGenerator.generateDateTimestamp());
+                        metadata.put(key, MetadataGenerator.generateDateTimestamp());
                     }
                     case "Boolean" -> {
-                        metadata.put(key, DataGenerator.generateBoolean());
+                        metadata.put(key, MetadataGenerator.generateBoolean());
                     }
                     case "Number" -> {
-                        metadata.put(key, DataGenerator.generateNumber());
+                        metadata.put(key, MetadataGenerator.generateNumber());
                     }
                     case "Array" -> {
-                        metadata.put(key, DataGenerator.generateArray());
+                        metadata.put(key, MetadataGenerator.generateArray());
                     }
                     case "Object" -> {
-                        metadata.put(key, DataGenerator.generateObject());
+                        metadata.put(key, MetadataGenerator.generateObject());
                     }
                 }
             }

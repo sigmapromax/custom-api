@@ -1,19 +1,18 @@
-package com.seed.customapi.resource.entity;
+package com.seed.customapi.file;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResourceEntity {
-    Long id;
-    Long projId;
-    String name;
+public class SaveResourceJsonFileRequest {
     String filePath;
-    Boolean isDeleted;
-    Integer size;
+    List<LinkedHashMap<String, Object>> data;
 }

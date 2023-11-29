@@ -2,6 +2,7 @@ package com.seed.customapi;
 
 import com.seed.customapi.common.utils.SecretUtil;
 import com.seed.customapi.common.utils.ResourceDataUtil;
+import com.seed.customapi.file.FileUtil;
 import com.seed.customapi.project.request.CreateProjectRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,4 +42,10 @@ class CustomApiApplicationTests {
             System.out.println(item);
         }
     }
+
+
+//    @Test
+//    void resourceJsonFileNameTest() {
+//        System.out.println(FileUtil.generateDataAddress(1L, 1L));
+//    }
 }

@@ -12,8 +12,9 @@ import java.util.LinkedHashMap;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateResourceRequest {
+    Long userId;
     Long projId;
     String name;
     Integer size;
-    LinkedHashMap<String, String> data;
+    LinkedHashMap<String, String> dataStructure;
 }

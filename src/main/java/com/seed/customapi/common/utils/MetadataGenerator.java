@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DataGenerator {
+public class MetadataGenerator {
     public static String generateString(String keyName, Integer id) {
         return keyName + " " + id.toString();
     }

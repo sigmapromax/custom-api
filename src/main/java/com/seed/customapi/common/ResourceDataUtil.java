@@ -1,16 +1,16 @@
-package com.seed.customapi.common.utils;
+package com.seed.customapi.common;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class ResourceDataUtil<T> {
+public class ResourceDataUtil {
 
     // returning final result which length is equal to size
-    public static List<LinkedHashMap<String, Object>> generateData(int size, LinkedHashMap<String, String> dataStructure) {
+    public static List<LinkedHashMap<String, Object>> generateData(int startId, int size, LinkedHashMap<String, String> dataStructure) {
         ArrayList<LinkedHashMap<String, Object>> result = new ArrayList<>();
-        int id = 1;
-        while (id < size) {
+        int id = startId;
+        while (id <= size) {
             LinkedHashMap<String, Object> metadata = new LinkedHashMap<>();
             metadata.put("id", id);
 

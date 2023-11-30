@@ -1,7 +1,6 @@
-package com.seed.customapi.file;
+package com.seed.customapi.file.response;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,10 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SaveResourceJsonFileRequest {
-    String filePath;
+public class LoadResourceJsonFileResponse {
     List<LinkedHashMap<String, Object>> data;
 }

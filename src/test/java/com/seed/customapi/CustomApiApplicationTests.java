@@ -1,11 +1,12 @@
 package com.seed.customapi;
 
-import com.seed.customapi.common.utils.SecretUtil;
-import com.seed.customapi.common.utils.ResourceDataUtil;
-import com.seed.customapi.file.FileUtil;
+import com.seed.customapi.common.SecretUtil;
+import com.seed.customapi.common.ResourceDataUtil;
 import com.seed.customapi.project.request.CreateProjectRequest;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.LinkedHashMap;
 
@@ -37,15 +38,15 @@ class CustomApiApplicationTests {
         data.put("array", "Array");
         data.put("object", "Object");
 
-        var result = ResourceDataUtil.generateData(10, data);
+        var result = ResourceDataUtil.generateData(1, 10, data);
         for (var item : result) {
             System.out.println(item);
         }
     }
 
 
-//    @Test
-//    void resourceJsonFileNameTest() {
-//        System.out.println(FileUtil.generateDataAddress(1L, 1L));
-//    }
+    @Test
+    void redisTest() {
+
+    }
 }

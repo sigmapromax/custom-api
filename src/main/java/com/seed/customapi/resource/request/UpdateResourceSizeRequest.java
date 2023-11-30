@@ -5,15 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.LinkedHashMap;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateResourceRequest {
+public class UpdateResourceSizeRequest {
     Long userId;
-    Long projId;
-    String name;
-    LinkedHashMap<String, String> dataStructure;
+    Long resId;
+    Integer size;
 }

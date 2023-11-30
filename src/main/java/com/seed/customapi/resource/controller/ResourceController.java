@@ -1,25 +1,21 @@
 package com.seed.customapi.resource.controller;
 
-import com.seed.customapi.common.utils.ResourceDataUtil;
-import com.seed.customapi.file.FileClient;
 import com.seed.customapi.resource.request.CreateResourceRequest;
-import com.seed.customapi.resource.response.ListResourceResponse;
+import com.seed.customapi.resource.response.GetResourceDataResponse;
+import com.seed.customapi.resource.request.UpdateResourceDataStructureRequest;
+import com.seed.customapi.resource.request.UpdateResourceSizeRequest;
+import com.seed.customapi.resource.response.*;
 import com.seed.customapi.resource.service.ResourceService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.LinkedHashMap;
-import java.util.List;
 
 @RequestMapping("resources/v1")
 @RestController
 public class ResourceController {
     private final ResourceService service;
-    private final FileClient fileClient;
 
-    public ResourceController(ResourceService service, FileClient fileClient) {
+    public ResourceController(ResourceService service) {
         this.service = service;
-        this.fileClient = fileClient;
     }
 
     @GetMapping("list/{projId}")
@@ -28,10 +24,28 @@ public class ResourceController {
     }
 
     @PostMapping("create")
-    public String createResource(@RequestBody CreateResourceRequest resource) {
-        LinkedHashMap<String, String> dataStructure = resource.getDataStructure();
-        List<LinkedHashMap<String, Object>> data = ResourceDataUtil.generateData(resource.getSize(), dataStructure);
-        fileClient.saveResourceJsonFile(resource.getUserId(), resource.getProjId(), data);
-        return "create successfully";
+    public ResponseEntity<CreateResourceResponse> createResource(@RequestBody CreateResourceRequest resource) {
+        return ResponseEntity.ok(service.create(resource));
+    }
+
+    @GetMapping("get/{resId}")
+    public ResponseEntity<GetResourceResponse> getResource(@PathVariable Long resId) {
+        return ResponseEntity.ok(service.get(resId));
+    }
+
+    @GetMapping("get/{resId}/data")
+    public ResponseEntity<GetResourceDataResponse> getResourceData(@PathVariable Long resId) {
+        return ResponseEntity.ok(service.getData(resId));
+    }
+
+    // only update data structure and size;
+    @PostMapping("updateDataStructure")
+    public ResponseEntity<UpdateResourceDataStructureResponse> updateDataStructure(@RequestBody UpdateResourceDataStructureRequest request) {
+        return ResponseEntity.ok(service.updateDataStructure(request));
+    }
+
+    @PostMapping("updateSize")
+    public ResponseEntity<UpdateResourceSizeResponse> updateSize(@RequestBody UpdateResourceSizeRequest request) {
+         return ResponseEntity.ok(service.updateSize(request));
     }
 }

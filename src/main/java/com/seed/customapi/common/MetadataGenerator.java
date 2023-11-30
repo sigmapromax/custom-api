@@ -1,4 +1,4 @@
-package com.seed.customapi.common.utils;
+package com.seed.customapi.common;
 
 import java.time.Instant;
 import java.util.ArrayList;

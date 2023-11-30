@@ -1,11 +1,10 @@
 package com.seed.customapi.project.service;
 
-import com.seed.customapi.common.utils.SecretUtil;
+import com.seed.customapi.common.SecretUtil;
 import com.seed.customapi.project.mapper.ProjectMapper;
 import com.seed.customapi.project.entity.ProjectEntity;
 import com.seed.customapi.project.request.CreateProjectRequest;
 import com.seed.customapi.project.response.CreateProjectResponse;
-import com.seed.customapi.project.response.GetProjectResponse;
 import com.seed.customapi.project.response.ListProjectResponse;
 import com.seed.customapi.resource.service.ResourceService;
 import lombok.extern.slf4j.Slf4j;

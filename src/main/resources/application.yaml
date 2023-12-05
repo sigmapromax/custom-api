@@ -14,3 +14,9 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+file-server:
+  url-prefix: http://localhost:3000
+  basic-path: /Users/zhanglinfeng/Downloads
+#  basic_path: "/home/zlf/data/custom-api";
+  file-suffix: .json

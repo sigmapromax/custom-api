@@ -1,12 +1,10 @@
 package com.seed.customapi;
 
-import com.seed.customapi.common.SecretUtil;
-import com.seed.customapi.common.ResourceDataUtil;
+import com.seed.customapi.utils.SecretUtil;
+import com.seed.customapi.utils.ResourceDataUtil;
 import com.seed.customapi.project.request.CreateProjectRequest;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.LinkedHashMap;
 

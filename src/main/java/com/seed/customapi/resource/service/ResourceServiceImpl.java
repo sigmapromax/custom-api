@@ -1,9 +1,8 @@
 package com.seed.customapi.resource.service;
 
-import com.seed.customapi.common.RedisService;
-import com.seed.customapi.common.ResourceDataUtil;
+import com.seed.customapi.redis.RedisService;
+import com.seed.customapi.utils.ResourceDataUtil;
 import com.seed.customapi.file.FileClient;
-import com.seed.customapi.file.FileUtil;
 import com.seed.customapi.resource.entity.ResourceEntity;
 import com.seed.customapi.resource.mapper.ResourceMapper;
 import com.seed.customapi.resource.request.CreateResourceRequest;
@@ -90,7 +89,7 @@ public class ResourceServiceImpl implements ResourceService {
         if (resource.getFilePath() == null) {
             // generate data and write to file-server
             List<LinkedHashMap<String, Object>> data = ResourceDataUtil.generateData(1, size, redisService.getValueByKey(request.getResId()));
-            String filePath = FileUtil.generateFilePath(request.getUserId(), resource.getProjId());
+            String filePath = fileClient.generateFilePath(request.getUserId(), resource.getProjId());
             fileClient.saveResourceJsonFile(filePath, data);
             mapper.updateFilePath(request.getResId(), filePath);
             resource.setFilePath(filePath);

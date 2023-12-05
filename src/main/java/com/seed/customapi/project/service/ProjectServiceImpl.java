@@ -1,6 +1,6 @@
 package com.seed.customapi.project.service;
 
-import com.seed.customapi.common.SecretUtil;
+import com.seed.customapi.utils.SecretUtil;
 import com.seed.customapi.project.mapper.ProjectMapper;
 import com.seed.customapi.project.entity.ProjectEntity;
 import com.seed.customapi.project.request.CreateProjectRequest;

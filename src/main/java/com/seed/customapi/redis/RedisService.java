@@ -1,4 +1,4 @@
-package com.seed.customapi.common;
+package com.seed.customapi.redis;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

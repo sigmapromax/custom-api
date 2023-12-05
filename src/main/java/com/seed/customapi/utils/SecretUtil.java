@@ -1,4 +1,4 @@
-package com.seed.customapi.common;
+package com.seed.customapi.utils;
 
 import com.seed.customapi.project.request.CreateProjectRequest;
 import lombok.extern.slf4j.Slf4j;

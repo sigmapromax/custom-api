@@ -1,4 +1,4 @@
-package com.seed.customapi.resource.controller;
+package com.seed.customapi.resource;
 
 import com.seed.customapi.resource.request.CreateResourceRequest;
 import com.seed.customapi.resource.response.GetResourceDataResponse;
@@ -39,12 +39,12 @@ public class ResourceController {
     }
 
     // only update data structure and size;
-    @PostMapping("updateDataStructure")
+    @PostMapping("update-data-structure")
     public ResponseEntity<UpdateResourceDataStructureResponse> updateDataStructure(@RequestBody UpdateResourceDataStructureRequest request) {
         return ResponseEntity.ok(service.updateDataStructure(request));
     }
 
-    @PostMapping("updateSize")
+    @PostMapping("update-size")
     public ResponseEntity<UpdateResourceSizeResponse> updateSize(@RequestBody UpdateResourceSizeRequest request) {
          return ResponseEntity.ok(service.updateSize(request));
     }

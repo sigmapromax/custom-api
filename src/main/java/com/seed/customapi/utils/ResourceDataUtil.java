@@ -1,4 +1,4 @@
-package com.seed.customapi.common;
+package com.seed.customapi.utils;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -19,22 +19,22 @@ public class ResourceDataUtil {
                 var type = entry.getValue();
                 switch (type) {
                     case "String" -> {
-                        metadata.put(key, MetadataGenerator.generateString(key, id));
+                        metadata.put(key, MetadataGeneratorUtil.generateString(key, id));
                     }
                     case "Date" -> {
-                        metadata.put(key, MetadataGenerator.generateDateTimestamp());
+                        metadata.put(key, MetadataGeneratorUtil.generateDateTimestamp());
                     }
                     case "Boolean" -> {
-                        metadata.put(key, MetadataGenerator.generateBoolean());
+                        metadata.put(key, MetadataGeneratorUtil.generateBoolean());
                     }
                     case "Number" -> {
-                        metadata.put(key, MetadataGenerator.generateNumber());
+                        metadata.put(key, MetadataGeneratorUtil.generateNumber());
                     }
                     case "Array" -> {
-                        metadata.put(key, MetadataGenerator.generateArray());
+                        metadata.put(key, MetadataGeneratorUtil.generateArray());
                     }
                     case "Object" -> {
-                        metadata.put(key, MetadataGenerator.generateObject());
+                        metadata.put(key, MetadataGeneratorUtil.generateObject());
                     }
                 }
             }

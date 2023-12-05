@@ -1,11 +1,11 @@
-package com.seed.customapi.common;
+package com.seed.customapi.utils;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class MetadataGenerator {
+public class MetadataGeneratorUtil {
     public static String generateString(String keyName, Integer id) {
         return keyName + " " + id.toString();
     }

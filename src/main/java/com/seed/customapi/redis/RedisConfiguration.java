@@ -1,4 +1,4 @@
-package com.seed.customapi.common.config;
+package com.seed.customapi.redis;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

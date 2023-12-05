@@ -1,7 +1,7 @@
 package com.seed.customapi;
 
-import com.seed.customapi.common.utils.SecretUtil;
-import com.seed.customapi.common.utils.ResourceDataUtil;
+import com.seed.customapi.utils.SecretUtil;
+import com.seed.customapi.utils.ResourceDataUtil;
 import com.seed.customapi.project.request.CreateProjectRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,9 +36,15 @@ class CustomApiApplicationTests {
         data.put("array", "Array");
         data.put("object", "Object");
 
-        var result = ResourceDataUtil.generateData(10, data);
+        var result = ResourceDataUtil.generateData(1, 10, data);
         for (var item : result) {
             System.out.println(item);
         }
+    }
+
+
+    @Test
+    void redisTest() {
+
     }
 }

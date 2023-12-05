@@ -1,4 +1,4 @@
-package com.seed.customapi.resource.entity;
+package com.seed.customapi.resource.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResourceEntity {
-    Long id;
-    Long projId;
-    String name;
-    String filePath;
-    Boolean isDeleted;
+public class UpdateResourceSizeRequest {
+    Long userId;
+    Long resId;
     Integer size;
 }

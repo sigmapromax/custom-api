@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.seed.customapi.resource.mapper.ResourceMapper">
+    <insert id="save" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO resources (proj_id, name)
+        VALUES (#{projId}, #{name})
+    </insert>
+    <update id="updateSize">
+        UPDATE resources
+        SET size = #{size}
+        WHERE id = #{id}
+    </update>
+    <update id="updateFilePath">
+        UPDATE resources
+        SET file_path = #{filePath}
+        WHERE id = #{id}
+    </update>
     <select id="listByProjId" resultType="com.seed.customapi.resource.entity.ResourceEntity">
         SELECT * FROM resources
         WHERE proj_id = #{projId}
+    </select>
+    <select id="findById" resultType="com.seed.customapi.resource.entity.ResourceEntity">
+        SELECT * FROM resources
+        WHERE id = #{id}
     </select>
 </mapper>

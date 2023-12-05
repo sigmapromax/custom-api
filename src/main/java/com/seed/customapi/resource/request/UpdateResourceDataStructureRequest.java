@@ -11,9 +11,8 @@ import java.util.LinkedHashMap;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateResourceRequest {
-    Long userId;
-    Long projId;
-    String name;
+public class UpdateResourceDataStructureRequest {
+    // used to get the resource data structure.
+    Long resId;
     LinkedHashMap<String, String> dataStructure;
 }
